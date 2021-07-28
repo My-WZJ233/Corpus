@@ -1,0 +1,28 @@
+{
+    "CorpusData": [
+        {
+            "id": 1,
+            "name": "美的集团：拟以25-50亿元回购股份，控股股东计划增持",
+            "source": "IT之家",
+            "type": "新闻",
+            "Language": "zh-Hans",
+            "class": "金融"
+        },
+        {
+            "name": "中科院大连化物所制备出高性能二维钙钛矿太阳电池",
+            "source": "IT之家",
+            "type": "新闻",
+            "Language": "zh-Hans",
+            "class": "科学",
+            "id": 2
+        },
+        {
+            "name": "飞芯电子激光雷达核心芯片预计 2023 年量产",
+            "source": "IT之家",
+            "type": "新闻",
+            "Language": "zh-Hans",
+            "class": "科学",
+            "id": 3
+        }
+    ]
+}

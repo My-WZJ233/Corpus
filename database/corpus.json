@@ -1,0 +1,31 @@
+[{
+  "_id": {
+    "$oid": "60c01da0a7b9132924e67ece"
+  },
+  "name": "中科院大连化物所制备出高性能二维钙钛矿太阳电池",
+  "source": "IT之家",
+  "type": "新闻",
+  "class": "科技",
+  "__v": 0,
+  "language": "zh-Hans"
+},{
+  "_id": {
+    "$oid": "60c01dc7a7b9132924e67ecf"
+  },
+  "name": "飞芯电子激光雷达核心芯片预计 2023 年量产",
+  "source": "IT之家",
+  "type": "新闻",
+  "class": "科技",
+  "__v": 0,
+  "language": "zh-Hans"
+},{
+  "_id": {
+    "$oid": "60c01de2a7b9132924e67ed0"
+  },
+  "name": "美的集团：拟以25 - 50亿元回购股份，控股股东计划增持",
+  "source": "IT之家",
+  "type": "新闻",
+  "class": "金融",
+  "__v": 0,
+  "language": "zh-Hans"
+}]
