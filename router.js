@@ -9,7 +9,7 @@ var router = express.Router()
 
 router.get('/Corpus/login', function(req, res) {
 	Login.loginfind(function(err,login) {
-		if(err){
+		if (err) {
 			return res.status(500).send('Error.');
 		}
 		res.render('login.html',{
@@ -25,7 +25,7 @@ router.post('/Corpus/login', function(req,res) {
 		if (data.inputId == 'root' && data.inputPassword == '123456') {
 			res.redirect('/Corpus')
 			
-			// 💡 ❓ Login不能不引文件 里面东西可以省略 但方法就没法用了
+			// Login不能不引文件 里面东西可以省略 但方法就没法用了
 			// var url=req.url
 			// if(url=='/Corpus/login') {
 			// 	res.redirect('/Corpus')
@@ -52,10 +52,10 @@ router.get('/Corpus', function(req, res) {
 	if (req.query.name != null && req.query.name != undefined && req.query.name != '') {
 	//Corpus.findOne({name: '/'+req.query.name.replace(/"/g, '')+'/'}, function (err, Corpus) {
 		let CorpusCearch = req.query.name.replace(/"/g, '')
-		let str=".*"+CorpusCearch+".*$"
+		let str = ".*"+CorpusCearch+".*$"
 		let reg = new RegExp(str)
 
-		Corpus.find({name:{$regex:reg,$options: 'i'}}, function (err, Corpus) {
+		Corpus.find({name:{$regex:reg, $options: 'i'}}, function (err, Corpus) {
 			if (err) {
 				return res.status(500).send('Server error');
 			}
@@ -66,8 +66,8 @@ router.get('/Corpus', function(req, res) {
 					Corpus: Corpus
 				})
 			} else {
-				let str=JSON.stringify(Corpus)
-				Corpus=JSON.parse(str)
+				let str = JSON.stringify(Corpus)
+				Corpus = JSON.parse(str)
 				res.render('Corpus.html', {
 					count: 1,
 					Corpus: Corpus
@@ -98,7 +98,7 @@ router.get('/Corpus', function(req, res) {
 // 普通用户
 router.get('/CorpusUser', function(req, res) {
 	Corpus.find(function(err, Corpus) {
-		if(err){
+		if (err) {
 			return res.status(500).send('Error.')
 		}
 		res.render('CorpusUser.html', {
@@ -108,11 +108,11 @@ router.get('/CorpusUser', function(req, res) {
 })
 
 
-router.get('/Corpus/new',function(req, res) {
+router.get('/Corpus/new', function(req, res) {
 	res.render('new.html')
 })
 
-router.post('/Corpus/new',function(req, res) {
+router.post('/Corpus/new', function(req, res) {
 	// Corpus.save(req.body, function (err) {
 	new Corpus(req.body).save(function (err) {
 		if (err) {
@@ -123,7 +123,7 @@ router.post('/Corpus/new',function(req, res) {
 })
 
 // 编辑
-router.get('/Corpus/edit',function(req, res) {
+router.get('/Corpus/edit', function(req, res) {
 	// console.log(req.query.id)
 	// Corpus.findById(parseInt(req.query.id), function (err, Corpus) {
 	Corpus.findById(req.query.id.replace(/"/g,''), function (err, Corpus) {
@@ -137,7 +137,7 @@ router.get('/Corpus/edit',function(req, res) {
 })
 
 // 更新信息
-router.post('/Corpus/edit',function(req, res) {
+router.post('/Corpus/edit', function(req, res) {
 	// console.log(req.body)
 	var id = req.body.id.replace(/"/g,'')
 	// Corpus.updateById(req.body, function (err) {
@@ -150,7 +150,7 @@ router.post('/Corpus/edit',function(req, res) {
 })
 
 // 删除
-router.get('/Corpus/delete',function(req, res) {
+router.get('/Corpus/delete', function(req, res) {
 	var id = req.query.id.replace(/"/g,'')
 	// Corpus.deleteById(req.query.id, function (err) {
 	Corpus.findByIdAndRemove(id,function(err) {
