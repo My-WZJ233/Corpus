@@ -51,8 +51,8 @@ router.get('/Corpus', function(req, res) {
 
 	if (req.query.name != null && req.query.name != undefined && req.query.name != '') {
 	//Corpus.findOne({name: '/'+req.query.name.replace(/"/g, '')+'/'}, function (err, Corpus) {
-		let CorpusCearch = req.query.name.replace(/"/g, '')
-		let str = ".*"+CorpusCearch+".*$"
+		let CorpusSearch = req.query.name.replace(/"/g, '')
+		let str = ".*"+CorpusSearch+".*$"
 		let reg = new RegExp(str)
 
 		Corpus.find({name:{$regex:reg, $options: 'i'}}, function (err, Corpus) {
@@ -70,8 +70,7 @@ router.get('/Corpus', function(req, res) {
 				Corpus = JSON.parse(str)
 				res.render('Corpus.html', {
 					count: 1,
-					Corpus: Corpus
-					
+					Corpus: Corpus	
 				})
 			}
 		})
